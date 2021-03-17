@@ -5,11 +5,11 @@
         private readonly IInput input;
         private readonly string[] maze;
         private readonly string playerPixel;
+        private readonly int playerPosition;
         private readonly IRenderer renderer;
         private readonly string wallPixel;
         private bool isGameEnded;
         private PlayerController playerController;
-        private readonly int playerPosition;
 
         public GameController(
             string playerPixel,
