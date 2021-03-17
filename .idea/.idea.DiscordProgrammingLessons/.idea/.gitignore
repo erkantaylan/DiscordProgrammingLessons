@@ -1,0 +1,11 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.DiscordProgrammingLessons.iml
+# Datasource local storage ignored files
+/../../../../../../:\Projects\DiscordProgrammingLessons\.idea\.idea.DiscordProgrammingLessons\.idea/dataSources/
+/dataSources.local.xml

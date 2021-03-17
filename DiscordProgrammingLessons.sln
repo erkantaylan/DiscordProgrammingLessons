@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeConsoleGame", "MazeConsoleGame\MazeConsoleGame.csproj", "{D680F874-063F-42C1-B63B-ACB9ED6BED16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeGameBase", "MazeGameBase\MazeGameBase.csproj", "{7AEA2A4C-AA77-458C-B7CE-B0C3A94DEADA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelper", "ConsoleHelper\ConsoleHelper.csproj", "{038247FC-BC7F-4B04-B91E-C37DBF7CC3E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D680F874-063F-42C1-B63B-ACB9ED6BED16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D680F874-063F-42C1-B63B-ACB9ED6BED16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D680F874-063F-42C1-B63B-ACB9ED6BED16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D680F874-063F-42C1-B63B-ACB9ED6BED16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AEA2A4C-AA77-458C-B7CE-B0C3A94DEADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AEA2A4C-AA77-458C-B7CE-B0C3A94DEADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AEA2A4C-AA77-458C-B7CE-B0C3A94DEADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AEA2A4C-AA77-458C-B7CE-B0C3A94DEADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{038247FC-BC7F-4B04-B91E-C37DBF7CC3E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{038247FC-BC7F-4B04-B91E-C37DBF7CC3E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{038247FC-BC7F-4B04-B91E-C37DBF7CC3E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{038247FC-BC7F-4B04-B91E-C37DBF7CC3E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
