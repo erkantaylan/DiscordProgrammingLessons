@@ -7,39 +7,35 @@ namespace MazeConsoleGame
     internal static class Program
     {
         private static readonly string wall = "|";
-        private static readonly string airPixel = ",";
+        private static readonly string air = "_";
 
-        private static readonly string[] maze =
+        private static readonly string[,] maze =
         {
-            wall,
-            airPixel,
-            airPixel,
-            airPixel,
-            airPixel,
-            airPixel,
-            airPixel,
-            airPixel,
-            airPixel,
-            wall
+            { wall, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, wall},
+            { wall, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, wall},
+            { wall, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, wall},
+            { wall, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, wall},
+            { wall, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, wall},
+            { wall, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, air, wall}
         };
 
         private static void Main(string[] args)
         {
             Console.CursorVisible = false;
 
-            var player = ((char) 2).ToString();
-            var position = 1;
+            var player = ((char)2).ToString();
+            var xPosition = 1;
+            var yPosition = 0;
             var consoleInput = new ConsoleInput();
 
             var gameController = new GameController(
                 player,
-                position,
+                xPosition,
+                yPosition,
                 maze,
-                wall,
-                consoleInput,
                 new ConsoleRenderer());
 
-            var playerController = new PlayerController(consoleInput, maze, wall, gameController.EndGame, player, position, airPixel);
+            var playerController = new PlayerController(consoleInput, maze, wall, gameController.EndGame, player, xPosition, yPosition, air);
 
             gameController.Start(playerController);
 
