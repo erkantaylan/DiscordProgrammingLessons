@@ -2,28 +2,25 @@
 {
     public class GameController
     {
-        private readonly IInput input;
-        private readonly string[] maze;
+        private readonly string[,] maze;
         private readonly string playerPixel;
-        private readonly int playerPosition;
+        private readonly int xPlayerPosition;
+        private readonly int yPlayerPosition;
         private readonly IRenderer renderer;
-        private readonly string wallPixel;
         private bool isGameEnded;
         private PlayerController playerController;
 
         public GameController(
             string playerPixel,
-            int playerStartPosition,
-            string[] maze,
-            string wallPixel,
-            IInput input,
+            int xPlayerStartPosition,
+            int yPlayerStartPosition,
+            string[,] maze,
             IRenderer renderer)
         {
             this.playerPixel = playerPixel;
-            playerPosition = playerStartPosition;
+            this.xPlayerPosition= xPlayerStartPosition;
+            this.yPlayerPosition= yPlayerStartPosition;
             this.maze = maze;
-            this.wallPixel = wallPixel;
-            this.input = input;
             this.renderer = renderer;
 
             isGameEnded = false;
@@ -56,7 +53,7 @@
 
         private void Ready()
         {
-            maze[playerPosition] = playerPixel;
+            maze[yPlayerPosition, xPlayerPosition] = playerPixel;
         }
 
         private void Clear()

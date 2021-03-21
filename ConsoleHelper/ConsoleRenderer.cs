@@ -10,13 +10,18 @@ namespace ConsoleHelper
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WindowHeight = 10;
+            //Cannot change font size without using unsafe code :(
         }
 
-        public void Render(string[] maze)
+        public void Render(string[,] maze)
         {
-            foreach (string pixel in maze)
+            for (int col = 0; col < maze.GetLength(0); col++)
             {
-                Console.Write(pixel);
+                for (int row = 0; row < maze.GetLength(1); row++)
+                {
+                    Console.Write(maze[col, row]);
+                }
+                Console.WriteLine();
             }
         }
 

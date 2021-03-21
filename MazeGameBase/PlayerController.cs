@@ -4,31 +4,34 @@ namespace MazeGameBase
 {
     public class PlayerController
     {
-        private readonly string airPixel;
+        private readonly string air;
         private readonly Action endFunction;
         private readonly IInput input;
-        private readonly string[] maze;
-        private readonly string wallPixel;
-        public string Pixel;
-        public int Position;
+        private readonly string[,] maze;
+        private readonly string wall;
+        public string player;
+        public int xPosition;
+        public int yPosition;
 
 
         public PlayerController(
             IInput input,
-            string[] maze,
-            string wallPixel,
+            string[,] maze,
+            string wall,
             Action endFunction,
-            string pixel,
-            int position,
-            string airPixel)
+            string player,
+            int xPosition,
+            int yPosition,
+            string air)
         {
             this.input = input;
             this.maze = maze;
-            this.wallPixel = wallPixel;
+            this.wall = wall;
             this.endFunction = endFunction;
-            Pixel = pixel;
-            Position = position;
-            this.airPixel = airPixel;
+            this.player = player;
+            this.xPosition = xPosition;
+            this.yPosition = yPosition;
+            this.air = air;
         }
 
         public void Update()
@@ -41,11 +44,19 @@ namespace MazeGameBase
             }
             else if (IsMoveRight(consoleKey))
             {
-                Move(Position + speed);
+                Move(xPosition + speed, yPosition);
             }
             else if (IsMoveLeft(consoleKey))
             {
-                Move(Position - speed);
+                Move(xPosition - speed, yPosition);
+            }
+            else if (IsMoveDown(consoleKey))
+            {
+                Move(xPosition, yPosition + speed);
+            }
+            else if (IsMoveUp(consoleKey))
+            {
+                Move(xPosition, yPosition - speed);
             }
         }
 
@@ -61,16 +72,31 @@ namespace MazeGameBase
              || key == ConsoleKey.LeftArrow;
         }
 
-        public void Move(int destination)
+        private static bool IsMoveDown(ConsoleKey key)
         {
-            if (maze[destination] == wallPixel)
+            return key == ConsoleKey.S
+             || key == ConsoleKey.DownArrow;
+        }
+
+        private static bool IsMoveUp(ConsoleKey key)
+        {
+            return key == ConsoleKey.W
+             || key == ConsoleKey.UpArrow;
+        }
+
+        public void Move(int xDestination, int yDestination)
+        {
+            if (yDestination == maze.GetLength(0)
+                || yDestination == -1
+                || maze[yDestination, xDestination] == wall)
             {
                 return;
             }
 
-            maze[Position] = airPixel;
-            maze[destination] = Pixel;
-            Position = destination;
+            maze[yPosition, xPosition] = air;
+            maze[yDestination, xDestination] = player;
+            xPosition = xDestination;
+            yPosition = yDestination;
         }
     }
 }
